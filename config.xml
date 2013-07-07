@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.macsystems.encrypt"
+        versionCode="10" 
+        version   = "1.0.0">
+
+    <!-- versionCode is optional and Android only -->
+
+    <name>Encrypt Text</name>
+
+    <description>
+        This app encodes meningfull text to meaningless text and vice-versa. This app help you to protect your text from someone snooping on your SMS, email etc. The encoding is simple and can be decoded easily so its not for professional use. However this encoding can help you to protect your message,blog from online snopping softwares (computer analysis of text) which is prominent at present.
+    </description>
+
+    <author href="" email="bhanu.net10@gmail.com">
+        Bhanu Sinha 
+    </author>
+    
+   
+   <icon src="icon.png" />
+
+</widget>
