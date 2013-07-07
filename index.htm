@@ -1,0 +1,111 @@
+<html>
+
+<script>
+
+function Encode(obj)
+{
+ var k=5;
+ var ch;
+ var key=getCode();
+
+ if(key != false)
+ { 
+  var k = document.getElementById("content");
+  var  e= k.value;
+
+  if(obj.value=="Encode")
+  {
+   
+   key=-parseInt(key);
+   obj.value="Decode"
+
+  }
+  else
+  {
+   key=parseInt(key);
+   obj.value="Encode"
+
+  }
+  var newStr=new Array(e.length);
+  for( var i=0; i< e.length; i++)
+   {
+    ch= e[i].charCodeAt(0) +key;
+    newStr[i]=String.fromCharCode(ch);
+   }
+  k.value=newStr.toString().replace(/,/g,"");
+ }
+}
+
+function getCode()
+{
+ var k=document.getElementById("key");
+ if(!isNaN(k.value))
+ {
+   if(parseInt(k.value) < 1 || parseInt(k.value) > 50)
+   {
+    alert("Incorrect Key. Key should be between 1 to 50 .\n Chose above 26 for a tougher encode. ");
+    return false;
+    k.focus();
+   }
+   return k.value;
+ }
+ else
+ {
+   alert("Incorrect Key. Key should be between 1 to 50");
+   return false;
+ }
+
+ 
+}
+
+function CopyText()
+{
+ var txt =document.getElementById("content").value;
+ window.clipboardData.setData("text",txt);
+ alert("All Text Copied");
+
+}
+
+function PasteText()
+{
+ var txt =document.getElementById("content");
+ txt.value=clipboardData.getData("text");
+
+
+}
+
+
+</script>
+<body>
+<div align=center >
+
+<table>
+<tr>
+<td>
+Enter Key 
+</td>
+<td>
+<input type="text" id="key" ></input>
+<td>
+<tr>
+<td>
+Enter Text
+</td>
+<td>
+ <textarea  rows=5  id="content" ></textarea>
+</td>
+</tr>
+<tr>
+<td colspan=2 align=center>
+<input type=button value="Encode" onclick="Encode(this)" ></input>
+<input type=button value="Copy" onclick="CopyText()" />
+<input type=button value="Paste" onclick="PasteText()" />
+</td>
+</tr>
+</table>
+</div> 
+</body>
+
+
+
+</html>
