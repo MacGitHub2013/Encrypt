@@ -76,7 +76,7 @@ function PasteText()
 
 
 </script>
-<body>
+<body style="background-image:url('bg.jpg');">
 <div align=center >
 
 <table>
@@ -85,18 +85,19 @@ function PasteText()
 Enter Key 
 </td>
 <td>
-<input type="text" id="key" ></input>
+<input type="text" style="width:200px;" id="key" ></input>
 <td>
 <tr>
 <td>
 Enter Text
 </td>
 <td>
- <textarea  rows=5  id="content" ></textarea>
+ <textarea  rows=5  style="width:200px;" id="content" ></textarea>
 </td>
 </tr>
 <tr>
-<td colspan=2 align=center>
+<td ></td>
+<td align=center>
 <input type=button value="Encode" onclick="Encode(this)" ></input>
 <input type=button value="Copy" onclick="CopyText()" />
 <input type=button value="Paste" onclick="PasteText()" />
