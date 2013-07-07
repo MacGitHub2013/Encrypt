@@ -1,5 +1,36 @@
 <html>
+<style>
+td
+{
 
+border:solid 1px #123;
+
+padding:5px;
+
+
+}
+
+table
+{
+
+border-colapse:colapse; 
+border:solid 1px #123;
+margin-top:20px;	
+
+}
+.div
+{
+
+background-color:#123; height:50px; color:white; font-size:40px; text-align:center; vertical-align:center;
+}
+
+
+body
+{
+background-color:#669999; margin:0px;
+}
+
+</style>
 <script>
 
 function Encode(obj)
@@ -58,49 +89,44 @@ function getCode()
  
 }
 
-function CopyText()
+function Clear()
 {
- var txt =document.getElementById("content").value;
- window.clipboardData.setData("text",txt);
- alert("All Text Copied");
-
-}
-
-function PasteText()
-{
- var txt =document.getElementById("content");
- txt.value=clipboardData.getData("text");
-
+ document.getElementById("content").value="";
 
 }
 
 
 </script>
-<body style="background-image:url('bg.jpg');">
+<body >
 <div align=center >
 
 <table>
 <tr>
-<td>
-Enter Key 
-</td>
-<td>
-<input type="text" style="width:200px;" id="key" ></input>
-<td>
+<th class="div" colspan="2" >Encrypt Text </th>
+</tr>
+</tr>
 <tr>
 <td>
-Enter Text
+Key 
 </td>
 <td>
- <textarea  rows=5  style="width:200px;" id="content" ></textarea>
+<input type="text" style="width:300px;" id="key" ></input>
+</td>
+<tr>
+<td>
+Text
+</td>
+<td>
+ <textarea  rows=5  style="width:300px;" id="content" ></textarea>
 </td>
 </tr>
 <tr>
-<td ></td>
-<td align=center>
+
+<td  colspan=2 align=center>
+
 <input type=button value="Encode" onclick="Encode(this)" ></input>
-<input type=button value="Copy" onclick="CopyText()" />
-<input type=button value="Paste" onclick="PasteText()" />
+
+<input type=button value="Clear" onclick="Clear(this)" ></input>
 </td>
 </tr>
 </table>
