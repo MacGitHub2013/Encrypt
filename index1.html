@@ -48,43 +48,42 @@ display:none;
 }
 
 </style>
-<script src="cordova-1.7.0.js"></script>
+
+
+
+
 
 <script>
 
 
-var menuOpen = false;
-var menuDiv = "";
- 
-function init() {
-document.addEventListener("deviceready", startup, false);
-}
- 
-function startup() {
-console.log("Business time...");
-menuDiv = document.querySelector("#menu");
- 
-document.addEventListener("menubutton", doMenu, false);
-}
- 
-function doMenu() 
-{
-console.log("The menu was clicked...");
-if(menuOpen) {
-console.log("close the menu");
-menuDiv.style.display="none";
-menuOpen = false;
-} else {
-console.log("open the menu");
-menuDiv.style.display="block";
-menuOpen = true;
-}
- 
-}
+var e = document.createEvent('Events');
+e.initEvent('menuKeyDown');
+document.dispatchEvent(e);
 
+
+public boolean onKeyDown(int keyCode, KeyEvent event)
+    {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+                alert("back pressed");
+        }
+
+        if (keyCode == KeyEvent.KEYCODE_MENU)
+        {
+                alert("menu pressede");
+        }
+
+        if (keyCode == KeyEvent.KEYCODE_SEARCH)
+        {
+          alert("search pressed");
+        }
+
+        return false;
+    }
 
 
 </script>
+
+
 <script>
 
 
